@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.jhonas.pageturner2.ui.ReservaController"
+      spacing="20"
+      styleClass="panel">
+
+    <Label text="Reservas" styleClass="titulo-seccion"/>
+
+    <VBox styleClass="tarjeta" spacing="14">
+        <Label text="Nueva reserva" styleClass="tarjeta-titulo"/>
+        <Label text="Solo se pueden reservar libros sin stock disponible." styleClass="tarjeta-nota"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ComboBox fx:id="comboLibro" promptText="Libro agotado" prefWidth="300"/>
+            <ComboBox fx:id="comboCliente" promptText="Selecciona un cliente" prefWidth="260"/>
+            <Button text="Registrar reserva" onAction="#registrarReserva" styleClass="boton-accion-grande"/>
+        </HBox>
+
+        <Label fx:id="mensaje"/>
+    </VBox>
+
+    <VBox styleClass="tarjeta" spacing="0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tablaReservas" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="130"/>
+                <TableColumn fx:id="colLibro" text="Libro" prefWidth="280"/>
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="220"/>
+                <TableColumn fx:id="colDni" text="DNI" prefWidth="140"/>
+            </columns>
+            <placeholder>
+                <Label text="Aún no hay reservas registradas"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>

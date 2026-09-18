@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.jhonas.pageturner2.ui.DashboardController"
+      spacing="22"
+      styleClass="panel">
+
+    <VBox spacing="4">
+        <Label text="PageTurner" styleClass="titulo-hero"/>
+        <Label text="Librería Académica · Panel general" styleClass="subtitulo-hero"/>
+    </VBox>
+
+    <HBox spacing="16">
+        <VBox styleClass="tarjeta" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="INGRESOS TOTALES" styleClass="tarjeta-label"/>
+            <Label fx:id="valorIngresos" text="—" styleClass="tarjeta-valor"/>
+        </VBox>
+        <VBox styleClass="tarjeta" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="LIBROS EN CATÁLOGO" styleClass="tarjeta-label"/>
+            <Label fx:id="valorLibros" text="—" styleClass="tarjeta-valor"/>
+        </VBox>
+        <VBox styleClass="tarjeta" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="CLIENTES" styleClass="tarjeta-label"/>
+            <Label fx:id="valorClientes" text="—" styleClass="tarjeta-valor"/>
+        </VBox>
+        <VBox styleClass="tarjeta" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="RESERVAS ACTIVAS" styleClass="tarjeta-label"/>
+            <Label fx:id="valorReservas" text="—" styleClass="tarjeta-valor"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="16">
+
+        <VBox styleClass="tarjeta" spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Más vendidos" styleClass="tarjeta-titulo"/>
+            <ListView fx:id="listaMasVendidos" prefHeight="180"/>
+        </VBox>
+
+        <VBox styleClass="tarjeta" spacing="10" HBox.hgrow="ALWAYS">
+            <Label text="Sin stock" styleClass="tarjeta-titulo"/>
+            <ListView fx:id="listaSinStock" prefHeight="180"/>
+        </VBox>
+
+    </HBox>
+
+    <Label fx:id="resumenVentas" styleClass="pie-resumen"/>
+
+</VBox>

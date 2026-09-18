@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.jhonas.pageturner2.ui.MainController"
+           prefWidth="1100" prefHeight="700">
+
+    <!-- Capa 1: el fondo con degradado -->
+    <Region fx:id="fondo" styleClass="fondo"/>
+
+    <!-- Capa 2: el contenido -->
+    <BorderPane>
+
+        <left>
+            <VBox fx:id="barraLateral" styleClass="sidebar" spacing="6">
+                <Label text="PageTurner" styleClass="logo"/>
+                <Button text="Libros"     onAction="#irALibros"    styleClass="nav-button"/>
+                <Button text="Clientes"   onAction="#irAClientes"  styleClass="nav-button"/>
+                <Button text="Ventas"     onAction="#irAVentas"    styleClass="nav-button"/>
+                <Button text="Reservas"   onAction="#irAReservas"  styleClass="nav-button"/>
+                <Button text="Dashboard"  onAction="#irADashboard" styleClass="nav-button"/>
+            </VBox>
+        </left>
+
+        <center>
+            <StackPane fx:id="contenido" styleClass="contenido"/>
+        </center>
+
+    </BorderPane>
+
+</StackPane>

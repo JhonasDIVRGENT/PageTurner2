@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.jhonas.pageturner2.ui.ClienteController"
+      spacing="20"
+      styleClass="panel">
+
+    <Label text="Clientes" styleClass="titulo-seccion"/>
+
+    <VBox styleClass="tarjeta" spacing="0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tablaClientes" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="280"/>
+                <TableColumn fx:id="colDni" text="DNI" prefWidth="160"/>
+                <TableColumn fx:id="colCorreo" text="Correo" prefWidth="300"/>
+            </columns>
+            <placeholder>
+                <Label text="Aún no hay clientes registrados"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+    <VBox styleClass="tarjeta" spacing="14">
+        <Label text="Registrar nuevo cliente" styleClass="tarjeta-titulo"/>
+
+        <HBox spacing="10">
+            <TextField fx:id="campoNombre" promptText="Nombre" HBox.hgrow="ALWAYS"/>
+            <TextField fx:id="campoDni" promptText="DNI (8 dígitos)" prefWidth="160"/>
+            <TextField fx:id="campoCorreo" promptText="Correo" HBox.hgrow="ALWAYS"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Añadir cliente" onAction="#guardarCliente" styleClass="boton-accion-grande"/>
+            <Button text="Eliminar seleccionado" onAction="#eliminarCliente" styleClass="boton-secundario-grande"/>
+        </HBox>
+
+        <Label fx:id="mensaje"/>
+    </VBox>
+
+</VBox>

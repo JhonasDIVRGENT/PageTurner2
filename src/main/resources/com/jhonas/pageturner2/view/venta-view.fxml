@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.jhonas.pageturner2.ui.VentaController"
+      spacing="20"
+      styleClass="panel">
+
+    <Label text="Ventas" styleClass="titulo-seccion"/>
+
+    <VBox styleClass="tarjeta" spacing="14">
+        <Label text="Registrar venta" styleClass="tarjeta-titulo"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ComboBox fx:id="comboLibro" promptText="Selecciona un libro" prefWidth="290"/>
+            <ComboBox fx:id="comboCliente" promptText="Selecciona un cliente" prefWidth="250"/>
+            <TextField fx:id="campoCantidad" promptText="Cantidad" prefWidth="110"/>
+            <Button text="Registrar venta" onAction="#registrarVenta" styleClass="boton-accion-grande"/>
+        </HBox>
+
+        <Label fx:id="mensaje"/>
+    </VBox>
+
+    <VBox styleClass="tarjeta" spacing="0" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tablaVentas" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120"/>
+                <TableColumn fx:id="colLibro" text="Libro" prefWidth="240"/>
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="200"/>
+                <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="100"/>
+                <TableColumn fx:id="colTotal" text="Total" prefWidth="110"/>
+            </columns>
+            <placeholder>
+                <Label text="Aún no hay ventas registradas"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+</VBox>
