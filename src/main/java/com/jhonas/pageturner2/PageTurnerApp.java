@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class PageTurnerApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -31,13 +31,13 @@ public class HelloApplication extends Application {
         ReservaService reservaService = new ReservaService(new ReservaRepositoryJson(), libroRepo);
 
         FXMLLoader loader = new FXMLLoader(
-                HelloApplication.class.getResource("view/main-view.fxml"));
+                PageTurnerApp.class.getResource("view/main-view.fxml"));
         loader.setControllerFactory(param -> new MainController(
                 libroService, clienteService, ventaService, reservaService));
 
         Scene scene = new Scene(loader.load());
         scene.getStylesheets().add(
-                HelloApplication.class.getResource("css/styles.css").toExternalForm());
+                PageTurnerApp.class.getResource("css/styles.css").toExternalForm());
 
         stage.setTitle("PageTurner 2.0");
         stage.setMinWidth(1000);
